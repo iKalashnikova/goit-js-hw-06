@@ -3,10 +3,14 @@
 
 const inputName = document.querySelector('#name-input')
 console.log(inputName);
-const outputName = document.querySelector('#name-output');
+const spanName = document.querySelector('#name-output');
 console.log(spanName);
 
 inputName.addEventListener('input', (event) => {
-    outputName.textContent = event.currentTarget.value.trim();
+    spanName.textContent = event.currentTarget.value.trim();
+
+    if (spanName.textContent.length === 0) {
+        spanName.textContent = 'Anonymous';
+    }
 });
 
